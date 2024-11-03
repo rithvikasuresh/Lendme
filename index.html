@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lendme!!!</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Logo Page -->
+    <div id="logoPage" class="page">
+        <h1>LENDME!!!</h1>
+        <p>A lending platform exclusively for MEC</p>
+        <button onclick="showPage('profilePage')">Get Started</button>
+    </div>
+
+    <!-- Profile Creation Page -->
+    <div id="profilePage" class="page" style="display: none;">
+        <h2>Create Your Profile</h2>
+        <form id="profileForm">
+            <label for="name">Name:</label>
+            <input type="text" id="name" name="name" required>
+
+            <label for="role">Role:</label>
+            <select id="role" name="role" onchange="showAdditionalFields()" required>
+                <option value="">Select</option>
+                <option value="student">Student</option>
+                <option value="faculty">Faculty</option>
+            </select>
+
+            <div id="studentFields" style="display: none;">
+                <label for="department">Department:</label>
+                <input type="text" id="department" name="department">
+                
+                <label for="semester">Semester:</label>
+                <input type="text" id="semester" name="semester">
+            </div>
+
+            <div id="facultyFields" style="display: none;">
+                <label for="facultyDept">Department:</label>
+                <input type="text" id="facultyDept" name="facultyDept">
+            </div>
+
+            <button type="button" onclick="showPage('lendPage')">Next</button>
+        </form>
+    </div>
+
+    <!-- Lend or Borrow Page -->
+    <div id="lendPage" class="page" style="display: none;">
+        <h2>Lend or Borrow</h2>
+        <button onclick="selectAction('lend')">Lend</button>
+        <button onclick="selectAction('borrow')">Borrow</button>
+        <div id="lendOptions" style="display: none;">
+            <p>What should I ask for?</p>
+            <button>Books</button>
+            <button>Tools</button>
+            <button>Lab Coats</button>
+            <p id="notFoundMessage" style="display: none;">Sorry we couldn't find you!</p>
+        </div>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+</html>
+<!-- Borrow Options (Inside lendPage) -->
+<div id="borrowOptions" style="display: none;">
+    <h3>Select a Category</h3>
+    <button onclick="showItems('tools')">Tools</button>
+    <button onclick="showItems('labCoats')">Lab Coats</button>
+    <button onclick="showItems('books')">Books</button>
+    
+    <!-- Display items based on selected category -->
+    <div id="itemList"></div>
+</div>

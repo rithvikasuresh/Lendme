@@ -1,0 +1,52 @@
+/* Reset some default styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: #f0f4f8;
+}
+
+.page {
+    text-align: center;
+    padding: 20px;
+    max-width: 300px;
+}
+
+button {
+    padding: 10px 20px;
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    cursor: pointer;
+    margin-top: 10px;
+}
+
+button:hover {
+    background-color: #0056b3;
+}
+/* Style for the Logo Page */
+#logoPage {
+    background-color: beige; /* Set background color to beige */
+    height: 100vh; /* Full height for center alignment */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+/* Style for the "LENDME!!!" text */
+#logoText {
+    font-size: 56px; /* Set font size */
+    font-weight: bold; /* Make the text bold */
+    color: #333; /* Set a color that contrasts well with beige */
+    margin-bottom: 20px; /* Add some space below */
+}
